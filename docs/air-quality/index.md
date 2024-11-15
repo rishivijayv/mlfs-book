@@ -4,14 +4,22 @@
 
 {% include air-quality.html %}
 
-![Forecast](./assets/img/pm25_forecast.png)
+# Forecast and Performance Without 3-day Lagging PM2.5
+
+## Forecast
+![Forecast_No_Lag](./assets/img/pm25_forecast.png)
 
 
-There is also a Python program to interact with the air quality ML system using language (text, voice),
-powered by a [function-calling LLM](https://www.hopsworks.ai/dictionary/function-calling-with-llms).
-
-# Model Performance Monitoring
+## Model Performance Monitoring
 
 1-Day Hindcast: Predictions vs Outcomes
 
-![Hindcast](./assets/img/pm25_hindcast_1day.png)
+![Hindcast_No_Lag](./assets/img/pm25_hindcast_1day.png)
+
+# Forecast and Performance WITH 3-day Lagging PM2.5
+## Forecast
+![Forecast_Lag](./assets/img/pm25_forecast_lagging_feature.png)
+
+## Model Performance Monitoring
+1-Day Hindcast: Predictions vs Outcomes
+![Hindcast_Lag](./assets/img/pm25_hindcast_1day_lagging_feature.png)
