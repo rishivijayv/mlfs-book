@@ -26,7 +26,7 @@ The dashboard for our Air Quality prediction service, with graphs for both model
 ## Chosing a City: Toronto
 We will first briefly explain the reason for us chosing the Downtown Toronto location for our PM2.5 measurements. The [AQICN Page for Downtown Toronto](https://aqicn.org/city/canada/ontario/toronto-downtown/) seems to have copious amounts of historical PM2.5 data. Additionally, there were no glaringly obvious errors in the sensor for a prolonged period of time (which would have indicated a faulty sensor and thus unreliable prediction). In general, the air-quality levels predicted by our chosen sensor seem to be consistent. Thus, we felt this sensor for Toronto Downtown would be a good choice. Below, you can see the historical data for this sensor
 
-![Toronto Downtown Historical](../data/toronto-downtown-historical-data-snapshot.png)
+![Toronto Downtown Historical](https://github.com/rishivijayv/mlfs-book/blob/main/data/toronto-downtown-historical-data-snapshot.png?raw=true)
 
 ## Overview of System: Without Lagging PM2.5
 
@@ -80,19 +80,19 @@ This aligns with our intuition as well -- we felt that adding a feature that tak
 
 ### Feature Importance
 Below is the Feature Importance graph for Model-1 
-![Model-1-Feature-Importance](../data/feature-importance.png)
+![Model-1-Feature-Importance](https://github.com/rishivijayv/mlfs-book/blob/main/data/feature-importance.png?raw=true)
 The higher the F-score, the more important the feature is in guiding the predictions made by the model. This indicates to us that the temperature seems to be the most important in making predictions for Model-1
 
 Below is the Featuer Importance graph for Model-2
-![Model-2-Feature-Importance](../data/feature-importance-lagging-feature.png)
+![Model-2-Feature-Importance](https://github.com/rishivijayv/mlfs-book/blob/main/data/feature-importance-lagging-feature.png?raw=true)
 Here, the general trend looks similar compared to the first model. The order of wind-speed and wind-direction seems to have changed, but the F-scores of these 2 were incredibly similar in Model-1's F-Score graph as well, which indicates to us that they are similar to each other in terms of importance for both models. The biggest difference in Model-2, however, is how important the `pm25_lagging_3day_mean` seems to be as a feature in predicting air-quality. To us, this seems to line up with the different performance of Model-2 compared to Model-1 based on R^2 and MSE scores as well -- this new feature was the only difference between the 2 models, and its high importance in making predictions could explain why Model-2 performs better than Model-1 on the test set.
 
 ### Historic Hindcast Graphs
 This is the hindcast graph based on the Model-1's prediction on the test data
-![Model-1-Hindcast-Historic](../notebooks/ch03/air_quality_model/images/pm25_hindcast.png)
+![Model-1-Hindcast-Historic](https://github.com/rishivijayv/mlfs-book/blob/main/notebooks/ch03/air_quality_model/images/pm25_hindcast.png?raw=true)
 
 And below, is the hindcast graph based on Model-2's prediction on the test data
-![Model-2-Hindcast-Historic](../notebooks/ch03/air_quality_model/images/pm25_hindcast_lagging_feature.png)
+![Model-2-Hindcast-Historic](https://github.com/rishivijayv/mlfs-book/blob/main/notebooks/ch03/air_quality_model/images/pm25_hindcast_lagging_feature.png?raw=true)
 
 Based on a quick eye-ball test, Model's prediction seem to be a little closer to the actual PM2.5 measurements for the day. However, the prediction graphs both seem to have a similar shape. This indicates to us that introducing the additional feature to Model-2 seems to **decrease** the intensity with which the predictions deviate from the actual data, however the general shape of the predictions seem to be the same. 
 
