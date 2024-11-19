@@ -100,6 +100,16 @@ Based on a quick eye-ball test, Model's prediction seem to be a little closer to
 
 ## Future Work
 
-TODO: Fill with some recommendations (pinned message)
+### Experimenting with Different Models
+   For this project, we started with XGBoost, but going forward, it would be valuable to try different models like Random Forest, LightGBM, or even deep learning models like RNNs or LSTMs. Exploring these alternatives could help us find new ways to improve prediction accuracy and understand how different model types handle temporal patterns in air quality data.
+
+### Implementing Periodic Model Retraining
+   Rather than training the model just once, another goal is to set up periodic retraining based on ongoing performance metrics. This would let the model adapt better to seasonal changes, shifts in air quality patterns, and other time-related factors, allowing it to stay accurate and reliable over time.
+
+### Testing Location Dependence with Multiple Sensors
+   We’d also like to test the model’s generalizability by using air quality data from multiple sensors in different locations. This would help us see if model performance is tied to specific locations or if it can predict well across various areas. If we notice the model performs better at certain locations, it might be worth creating location-specific models for more accurate predictions.
+
+### Dataset Cleanup and Duplication Removal
+   Finally, we need to clean up x_test by removing any duplicate entries (e.g., multiple entries from November 13). Doing this will give us more accurate MSE and R² values, helping us evaluate the model’s performance without skewed metrics. This cleanup is a small but essential step to ensure reliable performance evaluation.
 
 
